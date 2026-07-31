@@ -14,7 +14,7 @@ range of values in kappa
 # ======================================
 import numpy as np
 import matplotlib.pyplot as plt
-from utils import doGBplots, doPosTrajectory, doNegTrajectory, doSadSadTrajectory
+from utils import doNegTrajectory, doPosTrajectory, doSadSadTrajectory, doGBplots
 
 # ======================================
 # Main Simluation

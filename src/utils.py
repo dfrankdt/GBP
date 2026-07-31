@@ -14,6 +14,7 @@ We create routines to produce figures that illustrate
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+from scipy.integrate import solve_ivp
 
 from sims import gel_buffer, bValues
 from fns import Hpos, Hneg
@@ -53,9 +54,9 @@ def doNegTrajectory(kappa, C0):
 	# --- Plot the eq point
 	ax.plot(0, 0, 'ok')
 	ax.set(xlim = (phi0, 0.0001))
-	ax.set_xticks(np.array([phi0, 0]), [r'$\Phi(0)$', r'$\Phi_{-\infty}$'])
+	ax.set_xticks([0], [r'$\Phi_{-\infty}$'])
+	ax.set_yticks([0], [0])
 	ax.set(xlabel=r'$\Phi$', ylabel=r'$\Psi$')
-	ax.set_yticks(np.array([psi0, 0]), [r'$\Psi(0)$', 0])
 	ax.set(title=r'Phase Plane, $\xi < 0$')
 
 	return fig
@@ -92,8 +93,8 @@ def doPosTrajectory(kappa, C0):
 	# --- Plot the eq point
 	ax.plot(phi, 0, 'ok')
 	ax.set(xlim = (-0.0041, phi0))
-	ax.set_xticks(np.array([phi, phi0]), [r'$\Phi_{\infty}$', r'$\Phi(0)$'])
-	ax.set_yticks(np.array([psi0, 0]), [r'$\Psi(0)$', 0])
+	ax.set_xticks(np.array([phi]), [r'$\Phi_{\infty}$'])
+	ax.set_yticks(np.array([0]), [ 0])
 	ax.set(xlabel=r'$\Phi$', ylabel=r'$\Psi$')
 	ax.set(title=r'Phase Plane, $\xi > 0$')
 
@@ -139,7 +140,7 @@ def doSadSadTrajectory(kappa, C0):
 	CSsadsad = ax.contour(X, Y, Zpos, [0], colors=['red'], linestyles=['solid'])
 	
 	return fig
-
+	
 # ======================================
 # Gel Buffer Potential Plots
 # ======================================
