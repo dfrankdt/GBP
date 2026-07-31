@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+"""
+We create two routines:
+ - gel_buffer: Newton's method to identify the gel-buffer potential
+ - bValues: identify the values of the state variable at the gel boundary
+"""
+
+# ======================================
+# Packages
+# ======================================
 import numpy as np
 
 # ======================================
@@ -39,4 +48,3 @@ def bValues(kappa, C0):
 	x0 = np.log(x0)
 	y0 = -2*np.sqrt(C0*(np.cosh(x0) - 1))
 	return x0, y0
-
