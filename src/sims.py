@@ -32,6 +32,7 @@ def gel_buffer(kappa, C0):
 		x = x0 - f(x0)/fp(x0)
 		check = np.abs(f(x))
 		x0 = x
+
 	return x
 
 # ======================================
@@ -47,4 +48,5 @@ def bValues(kappa, C0):
 	x0 = ( (np.exp(phi) + 1/kappa) * np.exp(x0) - 1/kappa)
 	x0 = np.log(x0)
 	y0 = -2*np.sqrt(C0*(np.cosh(x0) - 1))
+
 	return x0, y0

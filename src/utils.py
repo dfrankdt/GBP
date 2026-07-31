@@ -57,6 +57,7 @@ def doNegTrajectory(kappa, C0):
 	ax.set(xlabel=r'$\Phi$', ylabel=r'$\Psi$')
 	ax.set_yticks(np.array([psi0, 0]), [r'$\Psi(0)$', 0])
 	ax.set(title=r'Phase Plane, $\xi < 0$')
+
 	return fig
 
 def doPosTrajectory(kappa, C0):
@@ -95,6 +96,7 @@ def doPosTrajectory(kappa, C0):
 	ax.set_yticks(np.array([psi0, 0]), [r'$\Psi(0)$', 0])
 	ax.set(xlabel=r'$\Phi$', ylabel=r'$\Psi$')
 	ax.set(title=r'Phase Plane, $\xi > 0$')
+
 	return fig
 
 def doSadSadTrajectory(kappa, C0):
@@ -109,7 +111,6 @@ def doSadSadTrajectory(kappa, C0):
 	ax.set_yticks([0, psi0], [0, r'$\Psi(0)$'])
 	ax.set(xlabel=r'$\Phi$', ylabel=r'$\Psi$')
 	ax.set(title='Saddle-Saddle Connection')
-	
 
 	# --- Surrounding trajectories
 	x = np.linspace(1.1*phi, phi, 2**8+1)
@@ -158,4 +159,5 @@ def doGBplots(kap_range, C0):
 	ax.plot(kap_range, phi_D*25.8*np.ones(len(kap_range)), '--r', label='Donnan Potential')
 	ax.set(xlabel = r'$\kappa$', ylabel = 'Potential (mV)')
 	ax.legend()
+
 	return fig
